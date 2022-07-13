@@ -1,0 +1,21 @@
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<!--@subject {{trans "Callback Form"}} @-->
+<!--@vars {
+"var data.telephone":"Telephone",
+} @-->
+
+{{template config_path="design/email/header_template"}}
+
+<table class="message-details">
+    <tr>
+        <td><strong>{{trans "Telephone"}}</strong></td>
+        <td>{{var data.telephone}}</td>
+    </tr>
+</table>
+
+{{template config_path="design/email/footer_template"}}

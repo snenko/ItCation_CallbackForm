@@ -1,0 +1,48 @@
+<?php
+/** @var $block \ItCation\CallbackForm\Block\Widget\CallbackForm */
+?>
+<?php if ($block->getData('title')): ?>
+    <h2 class='title'><?php echo $block->getData('title'); ?></h2>
+<?php endif; ?>
+<div class="heading-section">
+    <h2><?= $block->escapeHtml(__('Do you have a question?')) ?></h2>
+</div>
+<form class="form form-callback"
+      id="callback-form"
+      method="post"
+      action="<?php echo $block->getUrl('callback/send/sendPost') ?>"
+      data-hasrequired="<?= $block->escapeHtml(__('* Required Fields')) ?>"
+      data-mage-init='{"validation":{}}'>
+    <fieldset class="fieldset">
+        <?php echo $block->getBlockHtml('formkey'); ?>
+        <div class="row">
+            <div class="field required email">
+                <label class="sr-only" for="telephone"><span><?= $block->escapeHtml(__('Telephone')) ?></span></label>
+                <div class="control">
+                    <input type="tel"
+                           id="callback-telephone"
+                           name="telephone"
+                           class="input-text"
+                           title="<?php echo __('Telephone') ?>"
+                           placeholder="<?php echo __('Input phone number') ?>"
+                           data-validate="{required: true, 'validate-number':true}">
+                </div>
+            </div>
+        </div>
+        <div class="actions-toolbar">
+            <div class="primary">
+                <button type="submit" class="action send primary" title="<?= __('Get an answer') ?>">
+                    <span><?= __('Get an answer') ?></span></button>
+            </div>
+        </div>
+    </fieldset>
+</form>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Customer/js/block-submit-on-send": {
+                "formId": "callback-form"
+            }
+        }
+    }
+</script>

@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+	<widget id="itcation_callbackform_callbackform" class="ItCation\CallbackForm\Block\Widget\CallbackForm">
+		<label>Callback Form</label>
+		<description>CallbackForm</description>
+		<parameters>
+			<parameter name="title" xsi:type="text" visible="true" sort_order="10">
+				<label>Title</label>
+			</parameter>
+		</parameters>
+	</widget>
+</widgets>
